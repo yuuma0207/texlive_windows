@@ -55,8 +55,7 @@ function buildArticle({ title, content }) {
 <html>
 <head>
   <meta name="robots" content="noindex">
-  <script src="https://embed.zenn.studio/js/listen-embed-event.js"></script>
-
+  <script src="https://embed.zenn.studio/js/listen-embed-event.js" ></script>
   <link rel="stylesheet" href="../zenn-content-css.css" />
   <style>
     body {
