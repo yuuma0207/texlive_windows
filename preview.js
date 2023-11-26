@@ -55,10 +55,7 @@ function buildArticle({ title, content }) {
 <html>
 <head>
   <meta name="robots" content="noindex">
-  <script src="https://embed.zenn.studio/js/listen-embed-event.js" ></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.4/mermaid.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+  <script src="https://embed.zenn.studio/js/listen-embed-event.js"></script>
 
   <link rel="stylesheet" href="../zenn-content-css.css" />
   <style>

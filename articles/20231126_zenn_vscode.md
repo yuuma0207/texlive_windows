@@ -14,9 +14,10 @@ __本記事の対象となる方__
 ■ WSL2とVSCodeを用いてZennの執筆環境を整えたい人
 
 
-この記事では､以下の2点をご紹介します｡
+この記事では､以下の3点をご紹介します｡
 __(1) WSL2のディストリビューション（Ubuntu）にZenn CLIをインストールする__
 __(2) VSCodeの拡張機能Zenn Editorを使ってCWLを編集する環境を整える__
+__(3) ホスティングサービスを利用して、記事の限定公開を実現する__
 
 &nbsp;
 
@@ -33,6 +34,7 @@ WSL2（Ubuntu22.04）をインストールすること
 sudo apt update
 sudo apt upgrade -y
 ```
+
 
 ### aptを使ってとりあえずのnode.jsとnpmをインストール
 次に､node.jsとnpmをaptでインストールします。
@@ -88,6 +90,7 @@ npx install zenn-cli@latest
 npx zenn preview
 ```
 で記事を閲覧することができます。
+
 
 # 3. VSCodeの拡張機能Zenn Editorを使ってCWLを編集する環境を整える
 
