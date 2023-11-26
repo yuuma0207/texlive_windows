@@ -185,6 +185,10 @@ git remote add origin https://github.com/your_account/your_repository.git
 git push -u origin main
 ```
 
+:::message
+ローカルでbuildを行うと、`preview/` というディレクトリが作成されます。このディレクトリにはmdファイルを元にして変換されたhtmlファイルが格納されます。netlifyでホスティングするときは、ローカルでbuildを行う必要はありません。
+:::
+
 ## netlifyでビルドする
 netlifyのサイトにアクセスして、`Add new site`から`Import an existing project` をクリックします。初めての場合は少し表示が違うかもしれません。
 
