@@ -90,3 +90,54 @@ npx zenn preview
 で記事を閲覧することができます。
 
 # 3. VSCodeの拡張機能Zenn Editorを使ってCWLを編集する環境を整える
+
+# 4. 作成した記事をホスティングサービスにアップロードする
+作成した記事を非公開のままレビューを貰いたい場合、ホスティングサービスにアップロードする必要があります。ここでは、netlifyを用いてアップロードする方法を紹介します。
+
+## netlifyのアカウントを作成する
+[netlify](https://www.netlify.com/)にアクセスして、アカウントを作成します。githubアカウントで作成するのがおすすめ。
+
+## ホスティングサービスにアップロードするための準備
+[zennでも限定公開がしたい！](https://zenn.dev/cumet04/articles/zenn-private-preview#3.-netlify%E3%81%AB%E4%B8%8A%E3%81%92%E3%81%A6%E3%81%BF%E3%82%8B)を参考にした。
+`preview.js` と `package.json` をダウンロードして追加する。
+```js:preview.js
+const fs = require("fs");
+const path = require("path");
+const markdownToHtml = require("zenn-markdown-html");
+const matter = require("gray-matter");
+```
+これが必要なパッケージなので、npmでインストールする。
+```bash=
+npm install zenn-markdown-html gray-matter
+```
+`package.json` を以下のように編集する
+```json:package.json
+{
+  "name": "latex_install",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:preview": "node preview.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "zenn-cli": "^0.1.149",
+    "zenn-content-css": "^0.1.134",
+    "zenn-markdown-html": "^0.1.149"
+  }
+}
+```
+
+## netlifyでビルドする
+netlifyのサイトにアクセスして、`Import an existing project` をクリックする。Build settingsのBuild commandに `npm run build:preview` を入力する。
+![netlify](/images/netlify.png =1000x)
+
+## プレビューを確認する
+Site overviewから、`Published` となっているものをクリックする。Deploy logから`Preview` を取得すると、
+`https://656313fbea7b154f6ef3ca28--famous-lamington-80d36e.netlify.app/`
+のようなURLが表示される。このURLにアクセスすると、404エラーが表示される。しかし、
+`articles/20231126_texlive` をURLの末尾に追加すると、記事が表示される。
